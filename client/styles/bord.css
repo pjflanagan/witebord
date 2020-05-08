@@ -1,0 +1,149 @@
+div.container {
+	position: fixed;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	top: 0; left: 0;
+}
+
+.inactive {
+	pointer-events: none;
+	opacity: .3;
+}
+
+.black {
+	background: #1c1c1c !important;
+	border-color: #c0c0c0 !important;
+}
+
+.red {
+	background: #df0f0f !important;
+	border-color: #f18e8e !important;
+}
+
+.orange {
+	background: #e6951c !important;
+	border-color: #ecc180 !important;
+}
+
+.yellow {
+	background: #cecb17 !important;
+	border-color: #f0eea0 !important;
+}
+
+.green {
+	background: #22a009 !important;
+	border-color: #b6f3aa !important;
+}
+
+.blue {
+	background: #1c3ae6 !important;
+	border-color: #99a6f0 !important;
+}
+
+.purple {
+	background: #7310b6 !important;
+	border-color: #c38fe6 !important;
+}
+
+.pink {
+	background: #dc4ee9 !important;
+	border-color: #e99ff0 !important;
+}
+
+.eraser {
+	background: #FFF !important;
+	border-color: #b8b8b8 !important;
+}
+
+/* HEADER */
+
+div.header {
+	position: fixed;
+	top: 0; left: 0;
+	-webkit-transition: all .8s;
+	z-index: 3;
+	width: 100%;
+	display: flex;
+}
+
+div.header div.title {
+    padding: 10px;
+    font-size: 34px;
+}
+
+div.header div.users {
+	background: #1c1c1c;
+	color: #FFF;
+	padding: 4px;
+    font-size: 12px;
+    height: 14px;
+    margin-top: 19px;
+    margin-left: 0px;
+}
+
+/* PALLET */
+
+div.pallet {
+	position: fixed;
+	z-index: 2;
+	height: 80px;
+	flex: auto;
+	width: 100%;
+	text-align: center;
+	top: 100%;
+	margin-top: -80px;
+	-webkit-transition: all .8s;
+}
+
+div.pallet div.color {
+	margin: auto;
+	height: 50px;
+	width: 50px;
+	border: 4px solid;
+	border-radius: 50px;
+	display: inline-block;
+	margin: 8px 2px;
+	cursor: pointer;
+}
+
+div.pallet div.active {
+	border-color: #1c1c1c !important;
+}
+
+/* BORD */
+
+canvas#bord {
+	position: fixed;
+	flex: auto;
+	width: 100%;
+	height: 100%;
+	background: #FFF;
+	cursor: none;
+	top: 0; left: 0;
+	z-index: 0;
+}
+
+/* BRUSHES */
+
+div.brush {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	position: fixed;
+	cursor: none;
+	pointer-events: none;
+	z-index: 5;
+	margin-top: -3px;
+	margin-left: -3px;
+	-webkit-transition: transform .03s;
+}
+
+div.brush.eraser {
+	width: 60px;
+	height: 60px;
+	border: 1px solid #1c1c1c !important;
+	background: #FFFC !important;
+	margin-top: -30px;
+	margin-left: -30px;
+}

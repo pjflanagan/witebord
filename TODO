@@ -1,0 +1,52 @@
+
+
+- [ ] paintbrush circle icon while drawing
+- [ ] sizing for everywhere
+- [ ] auto save
+- [ ] request current image on load
+	- [ ] change the room to hold all the users
+	- [ ] first user on room list is the "host"
+	- [ ] host sends the current image to newbies
+- [ ] canvas is whole screen regardless of orientation
+- [ ] pallet hovers over canvas and fades out during drag
+
+
+Sign in with GroupMe to access, must be member of GroupChat to be in a room. When drawing the whiteboard live updates the board to anyone else in the room. When done a user can click the “Send to GroupMe” button. This button posts a screenshot in the GroupMe with a link to the page.
+
+
+
+- HTML5 Canvas
+    - Users can draw, preferably on mobile as well
+- GroupMe API
+    - Auto send pic to chat when user clicks share
+    - Login using GroupMe
+- S3
+    - Wait a few seconds after every event ends and save, if a new event starts then there is no need to save
+    - Save board as image every time a new user joins
+        - This means if a user has made changes and another joins that new user will get the modified version
+    - Save board every time a user goes back (or closes the page?)
+    - Save board every “Send to GroupMe” (obviously)
+- Socket.IO
+    - Live drawing
+
+
+
+PLAN:
+- Install GroupMe api and make login page
+    - https://www.npmjs.com/package/groupme 
+- Make landing groups page
+- TITLE [people in room] | prompt
+
+TODO
+- [ ] Names
+    - [ ] Name field on top 
+    - [ ] on pointers
+- [ ] People In Room Indicator
+    - [ ] In a little pill or circle by the room name
+- [ ] Make brush div track you wherever you go
+    - [ ] Use <body> instead of <canvas>
+- [ ] Server holds image in the room object and waits for all users to sign off before saving to S3, server then returns the object on new user request without making S3 call, server only makes S3 call on first user to a room
+- [ ] Only use left and top for init position, use the transform / translate to animate position changes
+    - [ ] So for the user brush positions do that
+
+

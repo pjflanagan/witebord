@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+	<% include templates/head.ejs %>
+	<link rel="stylesheet" type="text/css" href="/client/styles/bord.css">
+</head>
+
+<body ng-app="witebord">
+
+	<div class="container" ng-controller="witebordController" ng-init="init()">
+		<div class="header" ng-class="{inactive: down}">
+			<div class="title">{{roomTitle}}</div>
+			<div class="users">{{brushes.length()}}</div>
+		</div>
+
+
+		<div class="pallet" ng-class="{inactive: down}">
+			<div class="color black" ng-class="{active: colorClass==='black'}" ng-click="pallet('black')" ng-tap="pallet('black')"></div>
+			<div class="color red" ng-class="{active: colorClass==='red'}" ng-click="pallet('red')" ng-tap="pallet('red')"></div>
+			<div class="color orange" ng-class="{active: colorClass==='orange'}" ng-click="pallet('orange')" ng-tap="pallet('orange')"></div>
+			<div class="color yellow" ng-class="{active: colorClass==='yellow'}" ng-click="pallet('yellow')" ng-tap="pallet('yellow')"></div>
+			<div class="color green" ng-class="{active: colorClass==='green'}" ng-click="pallet('green')" ng-tap="pallet('green')"></div>
+			<div class="color blue" ng-class="{active: colorClass==='blue'}" ng-click="pallet('blue')" ng-tap="pallet('blue')"></div>
+			<div class="color purple" ng-class="{active: colorClass==='purple'}" ng-click="pallet('purple')" ng-tap="pallet('pruple')"></div>
+			<div class="color pink" ng-class="{active: colorClass==='pink'}" ng-click="pallet('pink')" ng-tap="pallet('pink')"></div>
+			<div class="color eraser" ng-class="{active: colorClass==='eraser'}" ng-click="pallet('eraser')" ng-tap="pallet('eraser')"></div>
+		</div>
+		<span id="brushes" ng-repeat="(userId, brush) in brushes.brushes">
+			<div class="brush" ng-class="brush.color" ng-style="brush.position"></div>
+		</span>
+		<canvas id="bord" ng-mousedown="strokeStart($event)" ng-mouseup="strokeEnd($event)" ng-mouseout="strokeEnd($event)"
+		 ng-mousemove="stroke($event)" ng-touchstart="touchStart($event)" ng-touchmove="touchMove($event)" ng-touchend="strokeEnd()"></canvas>
+	</div>
+
+	<% include templates/includes.ejs %>
+	<script src="/client/controllers/witebordController.js" type="module"></script>
+
+
+</body>
+
+</html>
