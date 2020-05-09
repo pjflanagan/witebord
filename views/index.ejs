@@ -6,15 +6,24 @@
 	<link rel="stylesheet" type="text/css" href="/client/styles/index.css">
 </head>
 
-<body ng-app="witebord">
-	<h1>MAKE A ROOM</h1>
-	<h1>JOIN A ROOM</h1>
-	<h1>RECENT ROOMS</h1>
-	<!-- different controller for this app -->
-	<!-- show all the active rooms -->
-	<!-- show a list of all the recently closed rooms -->
+<body>
+
+	<div class="header">
+		<div class="title white">WITEBORD</div>
+	</div>
+
+	<input class="input" id="input" type="text" placeholder="Enter Room Name" />
 	<% include templates/includes.ejs %>
-	<!-- <script src="/client/controllers/indexController.js" type="module"></script> -->
+
+	<script>
+		$(function () {
+			$('#input').on('keypress', function (key) {
+				if (key.keyCode === 13) {
+					window.location.href = '/' + $('#input').val();
+				}
+			})
+		});
+	</script>
 
 </body>
 

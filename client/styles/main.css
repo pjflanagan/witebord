@@ -1,19 +1,55 @@
-
 /* MAIN */
 
 body,
 html {
-	font-family: 'Staatliches', cursive;
-	width: 100%;
-	height: 100%;
+    font-family: 'Staatliches', cursive;
+    width: 100%;
+    height: 100%;
     padding: 0;
-	margin: 0 auto;
-	background: #1c1c1c;
-	-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+    margin: 0 auto;
+    background: #1c1c1c;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+/* HEADER */
+
+div.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transition: all .8s;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+}
+
+div.header div.title {
+    padding: 10px;
+    font-size: 34px;
+}
+
+div.header div.title.white {
+    color: #FFF;
+}
+
+div.header div.users {
+    background: #1c1c1c;
+    color: #FFF;
+    padding: 4px;
+    font-size: 12px;
+    height: 14px;
+    margin-top: 19px;
+    margin-left: 0px;
 }
